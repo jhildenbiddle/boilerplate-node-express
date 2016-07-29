@@ -1,16 +1,16 @@
 {
-  "name": "website-boilerplate-node-express",
+  "name": "boilerplate-node-express",
   "version": "1.0.0",
   "description": "A website boilerplate using Node+Express, Webpack, Sass, PostCSS (Autoprefixer) and Pug/Jade templates",
   "author": "John Hildenbiddle",
   "license": "MIT",
-  "homepage": "https://github.com/jhildenbiddle/website-boilerplate-node-express#readme",
+  "homepage": "https://github.com/jhildenbiddle/boilerplate-node-express#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://jhildenbiddle@github.com/jhildenbiddle/website-boilerplate-node-express.git"
+    "url": "git+https://jhildenbiddle@github.com/jhildenbiddle/boilerplate-node-express.git"
   },
   "bugs": {
-    "url": "https://github.com/jhildenbiddle/website-boilerplate-node-express/issues"
+    "url": "https://github.com/jhildenbiddle/boilerplate-node-express/issues"
   },
   "keywords": [
     "website",
