@@ -1,0 +1,22 @@
+extends /layouts/layout
+
+//- Mixins
+include /mixins/repeat
+
+//- Page variables
+block append vars
+    //- This value is overriding a value set on the layout template.
+    //- Comment this line to use the value from the layout template.
+    - var pageTitle   = 'Page Title'
+
+    //- This value is overriding a value provided by the Express route.
+    //- Comment this line to use the express route value.
+    - var welcomeText = 'Welcome text from a page variable'
+
+block content
+    h1= pageTitle
+
+    a(href="page") Another Page
+
+    +repeat(3)
+        p= welcomeText

@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple System', 'Segoe UI',
+        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    font-weight: 300;
+}
+
+header,
+footer {
+    padding: 30px;
+    background: #eee;
+}
+
+main {
+    padding: 30px;
+    flex: 1 0 auto;
+
+    h1 {
+        color: #369;
+    }
+}

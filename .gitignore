@@ -1,0 +1,18 @@
+# OS
+._*
+.cache
+.DS_Store
+
+# Directories
+node_modules
+public/css
+public/js
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed

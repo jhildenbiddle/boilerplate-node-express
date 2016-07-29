@@ -1,0 +1,65 @@
+{
+  "name": "website-boilerplate-node-express",
+  "version": "1.0.0",
+  "description": "A website boilerplate using Node+Express, Webpack, Sass, PostCSS (Autoprefixer) and Pug/Jade templates",
+  "author": "John Hildenbiddle",
+  "license": "MIT",
+  "homepage": "https://github.com/jhildenbiddle/website-boilerplate-node-express#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://jhildenbiddle@github.com/jhildenbiddle/website-boilerplate-node-express.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jhildenbiddle/website-boilerplate-node-express/issues"
+  },
+  "keywords": [
+    "website",
+    "boilerplate",
+    "node",
+    "express",
+    "webpack",
+    "sass",
+    "postcss",
+    "autoprefixer",
+    "pug",
+    "jad",
+    "template"
+  ],
+  "main": "server.js",
+  "scripts": {
+    "build:js": "webpack -p",
+    "build:css": "node-sass -r --output-style compressed app/assets/css -o public/css",
+    "postbuild:css": "postcss -u autoprefixer -r public/css/**/*.css",
+
+    "clean": "rimraf public/css public/js",
+
+    "server:development": "nodemon server.js --ignore app/assets/ --ignore public/",
+    "server:production": "cross-env NODE_ENV=production node server.js",
+
+    "watch:js": "webpack -d --watch",
+    "watch:css": "nodemon --watch app/assets/css -e scss -x npm run build:css",
+
+    "dev": "npm-run-all clean build:css -p watch:* server:development",
+    "start": "npm-run-all clean build:* server:production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.3.7",
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "cookie-parser": "^1.4.3",
+    "cross-env": "^2.0.0",
+    "express": "^4.14.0",
+    "node-sass": "^3.8.0",
+    "nodemon": "^1.10.0",
+    "npm-run-all": "^2.3.0",
+    "postcss-cli": "^2.5.2",
+    "pug": "^2.0.0-beta4",
+    "rimraf": "^2.5.4",
+    "serve-favicon": "^2.3.0",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.13.0"
+  }
+}

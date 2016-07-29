@@ -1,0 +1,26 @@
+block vars
+    - var pageTitle = 'Default Title'
+
+doctype html
+html(lang="en")
+    head
+        block head
+            meta(charset="utf-8")
+            meta(http-equiv="X-UA-Compatible", content="IE=edge")
+            meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+            title Site Name #{pageTitle ? ' - ' + pageTitle : ''}
+            link(rel='stylesheet', href='/css/style.css')
+
+    body
+        block header
+            include ../partials/header
+
+        main
+            block content
+                p Content
+
+        block footer
+            include ../partials/footer
+
+        block scripts
+            script(src='/js/main.js')
