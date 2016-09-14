@@ -3,15 +3,20 @@
 var webpack = require('webpack');
 
 
-// Config
+// Exports
 // =============================================================================
 module.exports = {
-    entry: './app/assets/js/main.js',
+    entry: {
+        library: __dirname + '/app/assets/js/main.js'
+    },
+    devtool: 'source-map',
     output: {
-        path    : './public/js',
-        filename: 'main.js',
+        path    : __dirname + '/public/assets/js/',
+        filename: 'main.js'
     },
     plugins: [
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(true),
         new webpack.optimize.UglifyJsPlugin()
     ]
 };

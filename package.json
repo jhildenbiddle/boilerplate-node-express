@@ -13,34 +13,32 @@
     "url": "https://github.com/jhildenbiddle/boilerplate-node-express/issues"
   },
   "keywords": [
-    "website",
-    "boilerplate",
-    "node",
-    "express",
-    "webpack",
-    "sass",
-    "postcss",
     "autoprefixer",
+    "boilerplate",
+    "express",
+    "jade",
+    "node",
+    "postcss",
     "pug",
-    "jad",
-    "template"
+    "sass",
+    "scss",
+    "template",
+    "webpack",
+    "website"
   ],
   "main": "server.js",
   "scripts": {
-    "build:js": "webpack -p",
-    "build:css": "node-sass -r --output-style compressed app/assets/css -o public/css",
-    "postbuild:css": "postcss -u autoprefixer -r public/css/**/*.css",
-
-    "clean": "rimraf public/css public/js",
-
-    "server:development": "nodemon server.js --ignore app/assets/ --ignore public/",
-    "server:production": "cross-env NODE_ENV=production node server.js",
-
-    "watch:js": "webpack -d --watch",
-    "watch:css": "nodemon --watch app/assets/css -e scss -x npm run build:css",
-
-    "dev": "npm-run-all clean build:css -p watch:* server:development",
-    "start": "npm-run-all clean build:* server:production",
+    "build": "npm-run-all -p build:*",
+    "build:js": "webpack --hide-modules",
+    "build:css": "node-sass -r --output-style compressed app/assets/scss -o public/assets/css && postcss -u autoprefixer public/assets/css/**/*.css -r",
+    "clean": "rimraf public",
+    "serve:dev": "nodemon server.js --ignore app/assets/ --ignore public/",
+    "serve:prod": "cross-env NODE_ENV=production nodemon server.js",
+    "start": "npm run start:dev",
+    "start:dev": "npm-run-all clean build:* -p watch:* serve:dev",
+    "start:prod": "npm-run-all clean build:* serve:prod",
+    "watch:css": "nodemon --watch app/assets/scss -e scss -x npm run build:css",
+    "watch:js": "npm run build:js -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

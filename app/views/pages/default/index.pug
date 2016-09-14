@@ -1,4 +1,4 @@
-extends /layouts/layout
+extends /layouts/app
 
 //- Mixins
 include /mixins/repeat
@@ -7,11 +7,11 @@ include /mixins/repeat
 block append vars
     //- This value is overriding a value set on the layout template.
     //- Comment this line to use the value from the layout template.
-    - var pageTitle   = 'Page Title'
+    - pageTitle   = 'Page Title'
 
     //- This value is overriding a value provided by the Express route.
     //- Comment this line to use the express route value.
-    - var welcomeText = 'Welcome text from a page variable'
+    - welcomeText = 'Welcome text from a page variable'
 
 block content
     h1= pageTitle
@@ -21,4 +21,4 @@ block content
     +repeat(3)
         p= welcomeText
 
-    img(src="images/image.jpg")
+    img(src="/images/image.jpg")

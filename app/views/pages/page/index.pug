@@ -1,10 +1,10 @@
-extends /layouts/layout
+extends /layouts/app
 
 //- Page variables
 block append vars
     //- This value is overriding a value set on the layout template.
     //- Comment this line to use the value from the layout template.
-    - var pageTitle = 'Another Page Title'
+    - pageTitle = 'Another Page Title'
 
 block content
     h1= pageTitle

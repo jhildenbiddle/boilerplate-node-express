@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'static')));
 
 // Routes
 require('./app/routes')(app, isProduction);
@@ -38,8 +39,9 @@ else {
     browserSync.create().init({
         server         : './public',
         files          : [
-            './public/**/*.{js,css}',
-            './app/views/**/*.pug'
+            './app/views/**/*.pug',
+            './public/**',
+            './static/**'
         ],
         middleware     : [app],
         open           : false,
